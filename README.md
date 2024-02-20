@@ -4,38 +4,6 @@ This project is a simple note-taking application with a RESTful API built using 
 
 Application also has feature for signup and login and also authentication and authorization functionality using JWT Token.
 
-## Table of Contents
-
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x
-- Django
-- Django REST Framework
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/django-note-app.git
-
-  
-Certainly! Below is the entire README content in a single code block:
-
-markdown
-Copy code
-# Note-Taking RESTful API
-
-This project implements a simple note-taking application with a RESTful API. It allows users to perform CRUD operations (Create, Read, Update, Delete) on notes. The API is built using Django and Django REST Framework.
-
 ## Features
 
 - User registration and login
@@ -57,7 +25,6 @@ This project implements a simple note-taking application with a RESTful API. It 
   - [Update a Note](#update-a-note)
   - [Get Note Version History](#get-note-version-history)
 - [Authentication](#authentication)
-- [Error Handling](#error-handling)
 
 ## Getting Started
 
@@ -140,4 +107,4 @@ Accessible by users having access only. GET the version history of the note. Thi
 If the request is valid, return the response with the appropriate status code. If the request is invalid, return an error message or status code
 
 ## Authentication
-Authentication is required for creating, updating, and retrieving notes. Use the JWT token obtained after logging in to authenticate API requests. Include the token in the Authorization header using the "Bearer" scheme.
+Authentication is required for creating, updating, and retrieving notes. Use the JWT token obtained after logging in to authenticate API requests. Include the access token in the Authorization header using the "Bearer" scheme.
