@@ -65,12 +65,24 @@ The API should now be accessible at http://localhost:8000/.
 ## API Endpoints
 ### User Registration
 #### Endpoint: POST /signup
+#### Sample Payload
+      {
+        "email": "user@example.com",
+        "first_name": "John",
+        "last_name": "Doe",
+        "password": "securepassword123"
+      }
 #### Functionality:
 Allows users to create an account by providing necessary information such as username, email, and password.
 #### Output:
 If the registration is successful, return a success message or status code. If there are validation errors or the username/email is already taken, return appropriate error messages or status codes.
 ### User Login
 #### Endpoint: POST /login
+#### Sample Payload
+      {
+        "email": "user@example.com",
+        "password": "securepassword123"
+      }
 #### Functionality:
 Allows users to log in to their account by providing their credentials (username/email and password).
 #### Output:
@@ -78,6 +90,11 @@ If the login is successful, return an authentication token or a success message 
 
 ### Create a New Note
 #### Endpoint: POST /notes/
+#### Sample Payload
+      {
+        "content": "here is the content",
+        "title": "here is title"
+      }
 #### Functionality: 
 Create a new note. Only authenticated users can create a new note.
 Note: The note owner needs to be stored in the database because notes are shareable.
@@ -90,11 +107,20 @@ GET a note by its ID. Only authenticated users. A note is viewable by its owner 
 If the request is valid, return a success message with the note content. If the request is invalid, return an error message with status code.
 ### Share a Note
 #### Endpoint: POST /notes/share
+#### Sample Payload
+      {
+        "note_id": 1,
+        "shared_with_users": [1, 2]
+      }
 #### Functionality:
 Share a note with other users. You can parse multiple users in this request. Once the note admin executes this POST API, the users embedded in the request body will be able to view and edit the note.
 Output: If the request is valid, return a success message with the appropriate status code. If the request is invalid, return an error message or status code.
 ### Update a Note
 #### Endpoint: PATCH /notes/{id}
+      {
+        "content": "updated content",
+        "title": "updated title"
+      }
 #### Functionality:
 The note will be editable by admin, and all the shared users. All the users who have access to the note will be able to perform an edit anywhere on the note. For the sake of simplicity, let’s assume no existing sentences can be edited. But new sentences can be added in between existing lines of the note. All the updates to the notes need to be tracked with a timestamp and stored somewhere.
 #### Output:
