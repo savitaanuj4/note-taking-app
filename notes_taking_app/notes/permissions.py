@@ -5,7 +5,7 @@ class IsOwnerOrSharedUser(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         # Check if the user is the owner of the object
-        if request.user == obj.creaed_by:
+        if request.user == obj.created_by:
             return True
 
         # Check if the user is in the list of users the object is shared with

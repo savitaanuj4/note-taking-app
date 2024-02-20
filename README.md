@@ -68,9 +68,10 @@ The API should now be accessible at http://localhost:8000/.
 #### Sample Payload
       {
         "email": "user@example.com",
+        "username": "user",
         "first_name": "John",
         "last_name": "Doe",
-        "password": "securepassword123"
+        "password": "securepassword123",
       }
 #### Functionality:
 Allows users to create an account by providing necessary information such as username, email, and password.
